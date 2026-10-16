@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14532d">
+  <title>دفتر فروشگاه</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div id="loginView" class="login-wrap">
+    <section class="login-card">
+      <div class="brand-mark">د</div>
+      <h1>دفتر فروشگاه</h1>
+      <p class="muted">مدیریت ساده خرید، فروش، موجودی و حساب مشتریان</p>
+      <div id="configNotice" class="notice hidden">ابتدا تنظیمات اتصال به پایگاه داده را در فایل <b>app.js</b> وارد کنید.</div>
+      <form id="loginForm">
+        <label>ایمیل مدیر<input id="email" type="email" required autocomplete="username" placeholder="you@example.com"></label>
+        <label>رمز عبور<input id="password" type="password" required autocomplete="current-password" placeholder="رمز عبور"></label>
+        <button class="primary full" type="submit">ورود</button>
+      </form>
+      <p id="loginMessage" class="message"></p>
+      <small class="muted">اطلاعات فروشگاه فقط پس از راه‌اندازی پایگاه داده آنلاین ذخیره می‌شود.</small>
+    </section>
+  </div>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><span class="brand-mark small">د</span><div><strong>دفتر فروشگاه</strong><small>نسخه آنلاین</small></div></div>
+      <nav id="nav">
+        <button data-page="dashboard" class="nav-item active">▦ <span>داشبورد</span></button>
+        <button data-page="products" class="nav-item">▤ <span>کالاها و موجودی</span></button>
+        <button data-page="purchases" class="nav-item">＋ <span>ثبت خرید</span></button>
+        <button data-page="sales" class="nav-item">↗ <span>ثبت فروش</span></button>
+        <button data-page="customers" class="nav-item">♙ <span>مشتریان و نسیه</span></button>
+        <button data-page="categories" class="nav-item">▦ <span>دسته‌بندی‌ها</span></button>
+        <button data-page="reports" class="nav-item">▥ <span>گزارش‌ها</span></button>
+        <button data-page="settings" class="nav-item">⚙ <span>تنظیمات</span></button>
+      </nav>
+      <div class="sidebar-bottom"><span id="connectionState" class="connection"><i></i> متصل نیست</span><button id="logoutBtn" class="text-button">خروج از حساب</button></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow" id="todayLabel">دفتر روزانه</div><h2 id="pageTitle">داشبورد</h2></div><div class="top-actions"><span class="cloud-tag">☁ آنلاین</span><button id="refreshBtn" class="icon-button" title="تازه‌سازی">⟳</button></div></header>
+      <div id="globalMessage" class="global-message hidden"></div>
+      <section id="pageContent"></section>
+      <footer>دفتر فروشگاه · نسخه اولیه آنلاین · تاریخ‌ها بر اساس تقویم شمسی نمایش داده می‌شوند</footer>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <script src="app.js"></script>
+</body>
+</html>

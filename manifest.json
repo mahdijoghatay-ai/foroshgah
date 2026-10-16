@@ -1,0 +1,19 @@
+{
+  "name": "دفتر فروشگاه",
+  "short_name": "دفتر فروش",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f8f5",
+  "theme_color": "#14532d",
+  "description": "مدیریت خرید، فروش، موجودی و حساب مشتریان",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
